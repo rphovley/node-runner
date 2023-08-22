@@ -1,16 +1,18 @@
 # Project Readme
 
 ## Getting Started
+
 To get started with this project, follow the steps below:
 
 1. Clone repo
-2. Install docker and docker compose if you have not
-3. Copy `login.env.template` to `login.env` and fill with the login with your node licenses.
-4. Modify `docker-compose.yml` to the appropriate number of nodes you want to run. This project has 10 to start. You'll need to make sure the name of the service and the NODE_NAME for each node you run is unique
+2. Install docker and docker-compose if you have not
+3. Copy `docker.env.template` to `docker.env` and fill with the login from your node licenses and your sendgrid api key. Enter the number of pods you want the uptime script to make sure are running. If the number dips below the number you put, you will receive an email at the email address provided in the .env
+4. Modify `docker-compose.yml` to the appropriate number of nodes you want to run. This project has 10 to start. You'll need to make sure the name of the service and the NODE_NAME for each node you run is unique.
 5. Copy the correct node artifact from `bin/artifacts` and rename it to `hyper`. Replace the existing `bin/hyper` executable with the one specific to your machine OS.
-5. Run `docker-compose up`
+6. Run `docker-compose up`
 
 ## File Structure
+
 The file structure of this project is as follows:
 
 - download/original_download.sh: This script is used to download and configure the Node.js binary based on the provided parameters.
@@ -19,6 +21,7 @@ The file structure of this project is as follows:
 - docker-compose.yml: This file defines the Docker services for running multiple instances of the hyper-node container.
 
 ## Additional Information
+
 - The project uses Docker to containerize the application.
 - The hyper-node service defined in docker-compose.yml can be replicated to create multiple instances of the hyper-node container.
 - Each instance of the hyper-node container is associated with a unique NODE_NAME environment variable, which can be set in the login.env file.

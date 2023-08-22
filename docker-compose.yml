@@ -2,10 +2,17 @@ version: '3.7'
 
 services:
 
+  node-uptime:
+    build: node-uptime/.
+    env_file:
+      - docker.env
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
   hyper-node:
     build: .
     env_file:
-      - login.env
+      - docker.env
     environment:
       - NODE_NAME=hyper-node
     volumes:
@@ -14,7 +21,7 @@ services:
   hyper-node2:
     build: .
     env_file:
-      - login.env
+      - docker.env
     environment:
       - NODE_NAME=hyper-node2
     volumes:
@@ -23,7 +30,7 @@ services:
   hyper-node3:
     build: .
     env_file:
-      - login.env
+      - docker.env
     environment:
       - NODE_NAME=hyper-node3
     volumes:
@@ -32,7 +39,7 @@ services:
   hyper-node4:
     build: .
     env_file:
-      - login.env
+      - docker.env
     environment:
       - NODE_NAME=hyper-node4
     volumes:
@@ -41,7 +48,7 @@ services:
   hyper-node5:
     build: .
     env_file:
-      - login.env
+      - docker.env
     environment:
       - NODE_NAME=hyper-node5
     volumes:
@@ -50,7 +57,7 @@ services:
   hyper-node6:
     build: .
     env_file:
-      - login.env
+      - docker.env
     environment:
       - NODE_NAME=hyper-node6
     volumes:
@@ -59,7 +66,7 @@ services:
   hyper-node7:
     build: .
     env_file:
-      - login.env
+      - docker.env
     environment:
       - NODE_NAME=hyper-node7
     volumes:
@@ -68,7 +75,7 @@ services:
   hyper-node8:
     build: .
     env_file:
-      - login.env
+      - docker.env
     environment:
       - NODE_NAME=hyper-node8
     volumes:
@@ -77,7 +84,7 @@ services:
   hyper-node9:
     build: .
     env_file:
-      - login.env
+      - docker.env
     environment:
       - NODE_NAME=hyper-node9
     volumes:
@@ -86,7 +93,7 @@ services:
   hyper-node10:
     build: .
     env_file:
-      - login.env
+      - docker.env
     environment:
       - NODE_NAME=hyper-node10
     volumes:
