@@ -1,5 +1,9 @@
 # Project Readme
 
+## Overview
+
+This project is a containerized application that utilizes Docker to run multiple instances of the hyper-node container. The hyper-node container runs the hyper command, which is a custom command provided by the hyper binary located in the /usr/local/bin/ directory. Also contains a script to notify you if your nodes have dropped below a certain threshold.
+
 ## Getting Started
 
 To get started with this project, follow the steps below:
@@ -19,6 +23,7 @@ The file structure of this project is as follows:
 - download/download.sh: This script is similar to original_download.sh, but it only prints the download URL and the node path instead of actually downloading and configuring the binary.
 - Dockerfile: This file is used to build the Docker image for the project. It installs the necessary dependencies and sets the working directory.
 - docker-compose.yml: This file defines the Docker services for running multiple instances of the hyper-node container.
+- node-uptime: contains app that checks whether or not the required number of pods is running and sends out a message to notify you if they are not.
 
 ## Additional Information
 
