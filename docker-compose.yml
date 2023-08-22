@@ -1,0 +1,75 @@
+version: '3.7'
+
+services:
+
+  hyper-node:
+    build: .
+    network_mode: host
+    env_file:
+      - login.env
+    environment:
+      - NODE_NAME=hyper-node
+    volumes:
+      - hyper-node-volume1:/root
+
+  hyper-node2:
+    build: .
+    network_mode: host
+    env_file:
+      - login.env
+    environment:
+      - NODE_NAME=hyper-node2
+    volumes:
+      - hyper-node-volume1:/root
+
+  hyper-node3:
+    build: .
+    network_mode: host
+    env_file:
+      - login.env
+    environment:
+      - NODE_NAME=hyper-node3
+    volumes:
+      - hyper-node-volume1:/root
+
+  hyper-node4:
+    build: .
+    network_mode: host
+    env_file:
+      - login.env
+    environment:
+      - NODE_NAME=hyper-node4
+    volumes:
+      - hyper-node-volume1:/root
+
+  hyper-node5:
+    build: .
+    network_mode: host
+    env_file:
+      - login.env
+    environment:
+      - NODE_NAME=hyper-node5
+    volumes:
+      - hyper-node-volume1:/root
+  
+  hyper-node6:
+    build: .
+    network_mode: host
+    env_file:
+      - login.env
+    environment:
+      - NODE_NAME=hyper-node6
+    volumes:
+      - hyper-node-volume1:/root
+
+  hyper-node7:
+    build: .
+    network_mode: host
+    env_file:
+      - login.env
+    environment:
+      - NODE_NAME=hyper-node7
+    volumes:
+      - hyper-node-volume1:/root
+volumes:
+  hyper-node-volume1: {}
