@@ -4,7 +4,6 @@ services:
 
   hyper-node:
     build: .
-    network_mode: host
     env_file:
       - login.env
     environment:
@@ -14,7 +13,6 @@ services:
 
   hyper-node2:
     build: .
-    network_mode: host
     env_file:
       - login.env
     environment:
@@ -24,7 +22,6 @@ services:
 
   hyper-node3:
     build: .
-    network_mode: host
     env_file:
       - login.env
     environment:
@@ -34,7 +31,6 @@ services:
 
   hyper-node4:
     build: .
-    network_mode: host
     env_file:
       - login.env
     environment:
@@ -44,7 +40,6 @@ services:
 
   hyper-node5:
     build: .
-    network_mode: host
     env_file:
       - login.env
     environment:
@@ -54,7 +49,6 @@ services:
   
   hyper-node6:
     build: .
-    network_mode: host
     env_file:
       - login.env
     environment:
@@ -64,11 +58,37 @@ services:
 
   hyper-node7:
     build: .
-    network_mode: host
     env_file:
       - login.env
     environment:
       - NODE_NAME=hyper-node7
+    volumes:
+      - hyper-node-volume1:/root
+
+  hyper-node8:
+    build: .
+    env_file:
+      - login.env
+    environment:
+      - NODE_NAME=hyper-node8
+    volumes:
+      - hyper-node-volume1:/root
+
+  hyper-node9:
+    build: .
+    env_file:
+      - login.env
+    environment:
+      - NODE_NAME=hyper-node9
+    volumes:
+      - hyper-node-volume1:/root
+
+  hyper-node10:
+    build: .
+    env_file:
+      - login.env
+    environment:
+      - NODE_NAME=hyper-node10
     volumes:
       - hyper-node-volume1:/root
 volumes:
