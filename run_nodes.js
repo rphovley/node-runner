@@ -17,7 +17,6 @@ for(let i=0; i<profiles.length; i++){
   const profile = profiles[i]
   baseTemplate.services[`uptime_${profile.serviceName}`] = {
     build: 'node-uptime/.',
-    env_file: ['docker.env'],
     environment: [
       `MIN_NUM_PODS=${profile.nodeCount}`, 
       `NOTIFY_EMAIL=${profile.notifyEmail}`,
@@ -28,7 +27,6 @@ for(let i=0; i<profiles.length; i++){
 
   baseTemplate.services[`hypernode_${profile.serviceName}`] = {
     build: '.',
-    env_file:['docker.env'],
     deploy: {
       mode: 'replicated',
       replicas: `${profile.nodeCount}`
