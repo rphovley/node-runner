@@ -5,7 +5,7 @@ const SENDGRID_KEY = process.env.SENDGRID_KEY
 const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL
 
 // Set the number of containers you want to check for
-const desiredContainerCount = process.env.MIN_NUM_PODS
+const MIN_NUM_PODS = process.env.MIN_NUM_PODS
 
 const ONE_HOUR = 3600000
 // Create a Docker client
@@ -25,7 +25,7 @@ async function checkContainerCount() {
     const runningContainerCount = containers.filter(container => container.State === 'running').length;
 
     // Check if the running container count is less than the desired count
-    if (runningContainerCount < desiredContainerCount) {
+    if (runningContainerCount < MIN_NUM_PODS) {
       // Check if an email was already sent within the last hour
       if (!lastEmailSentTime || Date.now() - lastEmailSentTime >= ONE_HOUR) {
         console.log('Some pods may be down');
