@@ -10,7 +10,7 @@ To get started with this project, follow the steps below:
 
 1. Clone repo
 2. Install docker and docker-compose if you have not
-3. Copy `docker.env.template` to `docker.env` and fill with the login from your node licenses and your sendgrid api key. Enter the number of pods you want the uptime script to make sure are running. If the number dips below the number you put, you will receive an email at the email address provided in the .env
+3. Copy `config.json.template` to `config.json` and fill with the login from your node licenses and your sendgrid api key. You can enter as many profiles as you have. Enter the number of pods you want the uptime script to make sure are running. If the number dips below the number you put, you will receive an email at the email address provided in `config.json`
 4. Modify `docker-compose.yml` to the appropriate number of nodes you want to run. This project has 10 to start. You'll need to make sure the name of the service and the NODE_NAME for each node you run is unique.
 5. Copy the correct node artifact from `bin/artifacts` and rename it to `hyper`. Replace the existing `bin/hyper` executable with the one specific to your machine OS.
 6. Run `docker-compose up`
@@ -22,8 +22,8 @@ The file structure of this project is as follows:
 - download/original_download.sh: This script is used to download and configure the Node.js binary based on the provided parameters.
 - download/download.sh: This script is similar to original_download.sh, but it only prints the download URL and the node path instead of actually downloading and configuring the binary.
 - Dockerfile: This file is used to build the Docker image for the project. It installs the necessary dependencies and sets the working directory.
-- docker-compose.yml: This file defines the Docker services for running multiple instances of the hyper-node container.
 - node-uptime: contains app that checks whether or not the required number of pods is running and sends out a message to notify you if they are not.
+- run_nodes.js: 
 
 ## Additional Information
 

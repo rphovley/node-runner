@@ -51,7 +51,7 @@ try {
   execSync('docker-compose -f docker-compose.generated.yml down', { stdio: 'inherit' })
 
   console.log('Starting new services...')
-  execSync('docker-compose -f docker-compose.generated.yml up', { stdio: 'inherit' })
+  execSync('docker-compose -f docker-compose.generated.yml up -d', { stdio: 'inherit' })
 } catch (error) {
   console.error('Error executing docker-compose:', error)
 }
