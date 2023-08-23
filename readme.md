@@ -11,7 +11,7 @@ To get started with this project, follow the steps below:
 1. Clone repo
 2. Install docker and docker-compose if you have not
 3. Copy `config.json.template` to `config.json` and fill with the login from your node licenses and your sendgrid api key. You can enter as many profiles as you have. Enter the number of pods you want the uptime script to make sure are running. If the number dips below the number you put, you will receive an email at the email address provided in `config.json`
-4. Modify `docker-compose.yml` to the appropriate number of nodes you want to run. This project has 10 to start. You'll need to make sure the name of the service and the NODE_NAME for each node you run is unique.
+4. Install Node
 5. Copy the correct node artifact from `bin/artifacts` and rename it to `hyper`. Replace the existing `bin/hyper` executable with the one specific to your machine OS.
 6. Run `docker-compose up`
 
