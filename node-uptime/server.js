@@ -53,4 +53,4 @@ setTimeout(()=>{
   // Run the checkContainerCount function once every minute
   setInterval(checkContainerCount, 60*1000);
 
-}, 10*1000) // wait 10 seconds for other pods to stand up
+}, 120*1000) // wait 2 minutes for other pods to stand up
