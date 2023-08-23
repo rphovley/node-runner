@@ -2,7 +2,7 @@
   "sendgridKey": "",
   "profiles":[
     {
-      "serviceName": "paul",
+      "serviceName": "lowercasename",
       "nodeEmail":"<email@example.com>",
       "nodePassword":"<password>",
       "nodeCount":1,
