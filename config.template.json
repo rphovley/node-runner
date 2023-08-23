@@ -1,0 +1,12 @@
+{
+  "sendgridKey": "",
+  "profiles":[
+    {
+      "serviceName": "paul",
+      "nodeEmail":"<email@example.com>",
+      "nodePassword":"<password>",
+      "nodeCount":1,
+      "notifyEmail":"notify@example.com>"
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 node_modules
 *.env
 docker-compose.generated.yml
-
+config.json
 .DS_Store
