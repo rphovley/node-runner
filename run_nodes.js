@@ -12,6 +12,7 @@ const baseTemplate = {
     'hyper-node-volume1': {}
   }
 }
+let previous = ''
 
 for(let i=0; i<profiles.length; i++){
   const profile = profiles[i]
@@ -25,24 +26,29 @@ for(let i=0; i<profiles.length; i++){
     volumes: ['/var/run/docker.sock:/var/run/docker.sock']
   }
 
-  baseTemplate.services[`hypernode_${profile.serviceName}`] = {
-    build: '.',
-    deploy: {
-      mode: 'replicated',
-      replicas: `${profile.nodeCount}`
-    },
-    restart: 'always',
-    environment:[
-      `NODE_NAME=hyper-node_${profile.serviceName}`,
-      `NODE_EMAIL=${profile.nodeEmail}`,
-      `NODE_PASSWORD=${profile.nodePassword}`,
-      `NODE_LOG_LEVEL=${profile.logLevel}`
-    ],
-    volumes: ['hyper-node-volume1:/root']
+  for(let j=0; j<profile.nodeCount; j++){
+    const nodeName = `hyper-node_${profile.serviceName}_${j}`
+    let current = {
+      build: '.',
+      restart: 'always',
+      environment:[
+        `NODE_NAME=${nodeName}`,
+        `NODE_EMAIL=${profile.nodeEmail}`,
+        `NODE_PASSWORD=${profile.nodePassword}`,
+        `NODE_LOG_LEVEL=${profile.logLevel}`
+      ],
+      volumes: [`hyper-node-volume1:/root/node_${nodeName}`]
+    }
+    if(previous){
+      current.depends_on = [previous]
+    }
+    baseTemplate.services[`hypernode_${profile.serviceName}_${j}`] = current
+    previous = `hypernode_${profile.serviceName}_${j}`
+    
   }
 }
 
-
+// console.log(JSON.stringify(baseTemplate, null, 2))
 fs.writeFileSync('docker-compose.generated.yml', JSON.stringify(baseTemplate, null, 2))
 
 try {
