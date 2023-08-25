@@ -35,7 +35,8 @@ for(let i=0; i<profiles.length; i++){
         `NODE_NAME=${nodeName}`,
         `NODE_EMAIL=${profile.nodeEmail}`,
         `NODE_PASSWORD=${profile.nodePassword}`,
-        `NODE_LOG_LEVEL=${profile.logLevel}`
+        `NODE_LOG_LEVEL=${profile.logLevel}`,
+        `NODE_WAIT=${j}`
       ],
       volumes: [`hyper-node-volume1:/root/node_${nodeName}`]
     }
