@@ -33,8 +33,7 @@ for(let i=0; i<profiles.length; i++){
       restart: 'always',
       environment:[
         `NODE_NAME=${nodeName}`,
-        `NODE_EMAIL=${profile.nodeEmail}`,
-        `NODE_PASSWORD=${profile.nodePassword}`,
+        `NODE_USER_ID=${profile.nodeUserId}`,
         `NODE_LOG_LEVEL=${profile.logLevel || 'debug'}`,
         `NODE_WAIT=${j}`
       ],

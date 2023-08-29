@@ -3,8 +3,7 @@
   "profiles":[
     {
       "serviceName": "lowercasename",
-      "nodeEmail":"<email@example.com>",
-      "nodePassword":"<password>",
+      "nodeUserId":"<nodeuserid>",
       "nodeCount":1,
       "notifyEmail":"notify@example.com>",
       "logLevel": "debug"

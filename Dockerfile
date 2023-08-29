@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine as builder
 
 RUN apk --no-cache add ca-certificates
 
@@ -7,8 +7,8 @@ WORKDIR /root/
 COPY bin/hyper /usr/local/bin/
 RUN chmod +x /usr/local/bin/hyper
 
+FROM scratch
 
-COPY bin/run.sh /usr/local/bin/
-RUN chmod +x /usr/local/bin/run.sh
+COPY --from=builder /usr/local/bin/hyper /root/hyper
 
-CMD /usr/local/bin/run.sh /usr/local/bin/hyper config ; /usr/local/bin/hyper
+CMD ["/root/hyper"]
