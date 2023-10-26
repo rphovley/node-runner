@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is a containerized application that utilizes Docker to run multiple instances of the hyper-node container. The hyper-node container runs the hyper command, which is a custom command provided by the hyper binary located in the /usr/local/bin/ directory. Also contains a script to notify you if your nodes have dropped below a certain threshold.
+This project is a containerized application that utilizes Docker to run multiple instances of the hyper-node container. The hyper-node container runs the hyper command, which is a custom command provided by the hyper binary located in the /usr/local/bin/ directory. Also contains a script to notify you if your nodes have dropped below a certain threshold. Any and all help is welcome!
 
 ## Getting Started
 
@@ -33,3 +33,4 @@ The file structure of this project is as follows:
 - The hyper-node-volume1 Docker volume is used to persist data for the hyper-node container.
 - The hyper-node container runs the hyper command, which is a custom command provided by the hyper binary located in the /usr/local/bin/ directory.
 - The hyper command is configured using the config command before starting the container.
+- It appears that the nodes do not function well with this method when being run from a raspberry pi
